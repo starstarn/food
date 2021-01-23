@@ -10,19 +10,19 @@
       <q-route-tab label="注册" to="/register" exact />
       <q-route-tab label="登录" to="/login" exact />
     </q-tabs>
-    <m-Login></m-Login>
+    <m-Register></m-Register>
   </div>
 </template>
 
 <script>
 // import vTab from "components/Tab";
 import mHead from "components/Mainhead";
-import mLogin from "components/Mlogin";
+import mRegister from "components/Mregister";
 export default {
   name: "PageLogin",
   components: {
     mHead,
-    mLogin
+    mRegister
   }
 };
 </script>
