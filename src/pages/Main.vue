@@ -7,6 +7,19 @@
         <input type="submit" value="Submit" />
       </form>
     </div>
+
+    <q-tabs
+      class="text-grey"
+      active-color="secondary"
+      indicator-color="secondary"
+      align="justify"
+    >
+      <q-route-tab label="首页" to="/main" exact />
+      <q-route-tab label="动态" to="/login" exact />
+      <q-route-tab label="+" to="/jump" exact />
+      <q-route-tab label="" to="/login" exact />
+      <q-route-tab label="我的" to="/my" exact />
+    </q-tabs>
   </div>
 </template>
 <script>

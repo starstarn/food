@@ -15,6 +15,9 @@ const routes = [
   { path: "/my", component: () => import("pages/My.vue") },
   { path: "/select", component: () => import("pages/Select.vue") },
   { path: "/food-list", component: () => import("pages/Food-list.vue") },
+  { path: "/jump", component: () => import("pages/Jump.vue") },
+  { path: "/diary", component: () => import("pages/Diary.vue") },
+  { path: "/food-recode", component: () => import("pages/Food-recode.vue") },
   {
     path: "*",
     component: () => import("pages/Error404.vue")

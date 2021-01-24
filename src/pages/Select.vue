@@ -1,12 +1,13 @@
 <template lang="">
   <div>
     <m-Head></m-Head>
-    <div class="head">
-      <form action=" " method="get">
-        <input type="text" name="select" placeholder="请输入食物名称" />
-        <input type="submit" value="查找" />
-      </form>
-    </div>
+
+    <form action=" " method="get">
+      <input type="text" name="select" placeholder="请输入食物名称" />
+      <input type="submit" value="查找" />
+      <input type="submit" value="取消" />
+    </form>
+
     <div class="q-pa-md">
       <div>
         食物推荐榜
@@ -68,11 +69,21 @@ export default {
 };
 </script>
 <style lang="css">
+input {
+  border: none;
+  outline: none;
+}
 input[type="text"] {
   width: 300px;
   height: 35px;
   margin: 10px auto;
-  border-right: 20px;
+  border-radius: 20px;
+  background-color: rgb(128, 204, 179);
+}
+input[type="submit"] {
+  width: 40px;
+  height: 30px;
+  background-color: cadetblue;
 }
 button {
   border: none;

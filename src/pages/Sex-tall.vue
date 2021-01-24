@@ -32,18 +32,25 @@
       您的身高是？
 
       <q-badge color="secondary" class="q-mb-lg">
-        身高: {{ range.max }} cm
+        身高: {{ getNullLabel(limitModel) }}cm
       </q-badge>
 
-      <q-range v-model="range" :min="120" :max="210" label drag-range />
+      <q-slider
+        v-model="limitModel"
+        color="secondary"
+        :min="110"
+        :max="220"
+        label
+      />
+      <button>下一步</button>
 
       <q-btn
         unelevated
         rounded
         color="teal"
-        label="下一步"
+        label="确定"
         to="/birthday"
-        style="width: 300px; height: 45px;"
+        style="width: 200px; height: 45px; margin: 10px 0; display: flex;"
       />
     </div>
   </div>
@@ -57,11 +64,14 @@ export default {
   },
   data() {
     return {
-      range: {
-        min: 120,
-        max: 210
-      }
+      limitModel: 160
     };
+  },
+
+  methods: {
+    getNullLabel(val) {
+      return val === null ? "null" : val;
+    }
   }
 };
 </script>
