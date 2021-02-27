@@ -11,13 +11,14 @@ const routes = [
   { path: "/sex-tall", component: () => import("pages/Sex-tall.vue") },
   { path: "/birthday", component: () => import("pages/Birthday.vue") },
   { path: "/weight", component: () => import("pages/Weight.vue") },
-  { path: "/main", component: () => import("pages/Main.vue") },
+  { path: "/", component: () => import("pages/Main.vue") },
   { path: "/my", component: () => import("pages/My.vue") },
   { path: "/select", component: () => import("pages/Select.vue") },
   { path: "/food-list", component: () => import("pages/Food-list.vue") },
   { path: "/jump", component: () => import("pages/Jump.vue") },
   { path: "/diary", component: () => import("pages/Diary.vue") },
   { path: "/food-recode", component: () => import("pages/Food-recode.vue") },
+  { path: "/setting", component: () => import("pages/setting.vue") },
   {
     path: "*",
     component: () => import("pages/Error404.vue")
