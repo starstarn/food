@@ -23,29 +23,25 @@
             transition-next="jump-up"
           >
             <q-tab-panel name="reduce">
-              
-            
-                  <q-list bordered separator>
-                    <q-item clickable v-ripple>
-                      <q-item-section>Single line item</q-item-section>
-                    </q-item>
+              <q-list bordered separator>
+                <q-item clickable v-ripple>
+                  <q-item-section>{{food.data.newslist[0].name}}</q-item-section>
+                </q-item>
 
-                    <q-item clickable v-ripple>
-                      <q-item-section>
-                        <q-item-label>Item with caption</q-item-label>
-                        <q-item-label caption>Caption</q-item-label>
-                      </q-item-section>
-                    </q-item>
+                <q-item clickable v-ripple>
+                  <q-item-section>
+                    <q-item-label>Item with caption</q-item-label>
+                    <q-item-label caption>Caption</q-item-label>
+                  </q-item-section>
+                </q-item>
 
-                    <q-item clickable v-ripple>
-                      <q-item-section>
-                        <q-item-label overline>OVERLINE</q-item-label>
-                        <q-item-label>Item with caption</q-item-label>
-                      </q-item-section>
-                    </q-item>
-                  </q-list>
-              
-              
+                <q-item clickable v-ripple>
+                  <q-item-section>
+                    <q-item-label overline>OVERLINE</q-item-label>
+                    <q-item-label>Item with caption</q-item-label>
+                  </q-item-section>
+                </q-item>
+              </q-list>
             </q-tab-panel>
 
             <q-tab-panel name="skin">
@@ -63,6 +59,7 @@
 </template>
 <script>
 import mHead from "components/Mhead";
+import axios from "axios";
 export default {
   components: {
     mHead
@@ -70,9 +67,28 @@ export default {
   data() {
     return {
       tab: "reduce",
-      splitterModel: 20
+      splitterModel: 20,
+      food: null
     };
-  }
+  },
+  /* methods:{
+                get_weather(){
+                    axios.get("http://wthrcdn.etouch.cn/weather_mini?city="+this.city)
+                        .then(response=>{
+                            console.log(response);
+
+                        }).catch(error=>{
+                            console.log(error.response)
+                    });
+                }
+   }, */
+  mounted() {
+    axios
+      .get(
+        "http://api.tianapi.com/txapi/nutrient/index?key=b90da2f01f99681ba41aff48cbe35892&word=%E6%B2%B9%E6%9D%A1&mode=0"
+      )
+      .then(response => (this.food = response));
+  },
 };
 </script>
 <style lang=""></style>
